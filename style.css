@@ -1,66 +1,184 @@
-/* Reset some default styles */
-body, h1, h2, h3, p, ul, li {
-  margin:10;
+* {
   padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#mainTitle {
+  color: rgb(243, 223, 193);
+  font-size: large;
+}
+div#player-Container {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+div.player {
+  border: 6px solid rgb(219, 180, 44);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+  color: rgb(253, 255, 252);
+  background-color: rgb(55, 6, 23);
+  margin: 10px;
+  padding: 10px;
+  height: 600px;
+  width: 600px;
 }
 
 body {
-  font-family: 'Arial', sans-serif;
+  background-color: rgb(1, 22, 39);
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
 }
 
-.container {
-  max-width: 300px;
-  margin: 0 auto;
+img {
+  width: 200px;
+  height: 225px;
+  padding: 10px;
+}
+div#all-players-container{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px;
+  margin: 20px;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+
+} 
+div.container {
+  display: grid;
+}
+div {
+  display: flex;
+}
+h2 {
+  margin: 20px;
+  font-size: 2.5rem;
+  font-weight: 300;
+  animation: lights 5s 750ms linear infinite;
+  justify-content: space-evenly;
+  color: rgb(222, 226, 230);
+}
+
+@keyframes lights {
+  0% {
+    color: hsl(230, 40%, 80%);
+    text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.2),
+      0 0 0.125em hsla(320, 100%, 60%, 0.3),
+      -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+      1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+  }
+
+  30% {
+    color: hsl(230, 80%, 90%);
+    text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 60%, 0.5),
+      -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+      0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+  }
+
+  40% {
+    color: hsl(230, 100%, 95%);
+    text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 90%, 0.5),
+      -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
+      0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
+  }
+
+  70% {
+    color: hsl(230, 80%, 90%);
+    text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 60%, 0.5),
+      0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+      -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+  }
+
+  100% {
+    color: hsl(230, 40%, 80%);
+    text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.2),
+      0 0 0.125em hsla(320, 100%, 60%, 0.3),
+      1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+      -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+  }
+}
+
+p {
+  color: rgb(253, 240, 213);
+  font-size: x-large;
+  justify-content: space-between;
+}
+
+button.close-button {
+  color: rgb(0, 48, 73);
+  background-color: rgb(253, 240, 213);
+  font-size: large;
+  padding: 4px;
+  font-weight: bold;
+  margin: 6px;
+}
+
+/* div#roster-container {
+  border: 4px solid rgb(253, 240, 213); 
+}
+*/
+
+#formElem {
+  border: 2px solid rgb(219, 180, 44);
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+  width: fit-content;
   padding: 20px;
 }
 
-#all-players-container {
+label {
+  justify-content: space-around;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  gap: 20px;
-}
-
-.form-class {
-  display: flex;
-  flex-direction: column;
-  max-width: 400px;
-  margin: 20px 0;
-}
-
-.form-class label {
-  margin-bottom: 5px;
-}
-
-.form-class input,
-.form-class button {
-  margin-bottom: 10px;
-  padding: 8px;
-}
-
-.form-class button {
-  cursor: pointer;
-  background-color: #4caf50;
+  align-content: center;
+  align-items: center;
   color: white;
-  border: none;
-}
+} 
 
-.form-class button:hover {
-  background-color: #45a049;
-}
-
-/* Style player cards */
-#all-players-container div {
-  border: 1px solid #ddd;
-  padding: 10px;
-  text-align: center;
-}
-
-#all-players-container img {
-  max-width :50%;
-  height: auto;
-}
-
-/* Style the form */
-#new-player-form form {
-  margin-top: 20px;
+input {
+  justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  color: black;
+} 
+form {
+  border: 2px solid rgb(219, 180, 44);
+  background-color: black;
+  color: white;
+  display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    width: fit-content;
+    padding: 20px;
 }
