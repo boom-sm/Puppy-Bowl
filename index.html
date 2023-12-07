@@ -5,16 +5,50 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script defer src="script.js"></script>
+
   <link rel="stylesheet" href="style.css" />
-  <title>Puppy Bowl Roster</title>
+  <title>PuppyBowl</title>
 </head>
 
 <body>
-  <div id="app" class="container">
-    <div id="new-player-form" class="form-container"></div>
-    <div id="all-players-container" class="players-container"></div>
+  <h1 id="mainTitle">The Puppy Bowl</h1>
+  <div class="container">
+    <form action="https://fsa-puppy-bowl.herokuapp.com/api/2310-fsa-et-web-pt-sf/players" method="post"
+      id="new-player-form">
+      <h3>New Player</h3>
+      <div class="field">
+        <input type="text" id="name" name="name" placeholder="Name" required />
+        <small></small>
+      </div>
+      <div class="field">
+        <input type="text" id="breed" name="breed" placeholder="Breed" required />
+        <small></small>
+      </div>
+      <div class="field">
+        <input type="text" id="status" name="status" placeholder="Status" required />
+        <small></small>
+      </div>
+
+      <div class="field">
+        <input type='file' id="imageUrl" name="imageUrl" src="#" alt="imageUrl" height=200 width=100/>
+
+        <!-- </div> -->
+        <div class="field">
+          <button type="submit">Submit</button>
+        </div>
+    </form>
+
   </div>
+
+
+  <!-- container for all players -->
+  <div id="all-players-container"></div>
+
+  <div id="player-container"></div>
+
+
+  <!-- import JavaScript -->
+  <script src="script.js"></script>
 </body>
 
 </html>
