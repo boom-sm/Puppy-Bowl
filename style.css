@@ -5,7 +5,7 @@
 }
 
 #mainTitle {
-  color: rgb(243, 223, 193);
+  color: black;
   font-size: large;
 }
 div#player-Container {
@@ -34,7 +34,7 @@ div.player {
 }
 
 body {
-  background-color: rgb(1, 22, 39);
+  background-color: white;
   display: flex;
   flex-wrap: wrap;
   align-content: center;
@@ -171,7 +171,7 @@ input {
 } 
 form {
   border: 2px solid rgb(219, 180, 44);
-  background-color: black;
+  background-color: rgb(104, 103, 103);
   color: white;
   display: flex;
     flex-direction: column;
