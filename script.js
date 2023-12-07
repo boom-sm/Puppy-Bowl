@@ -39,11 +39,11 @@ const addNewPlayer = async (playerObj) => {
       body: JSON.stringify(playerObj)
     });
 
-    // Assuming you might want to do something with the response
+  
     const result = await response.json();
     console.log(result);
 
-    // Assuming you might want to refresh the player list after adding a new player
+    //refresh the player list after adding a new player
     const updatedPlayers = await fetchAllPlayers();
     renderAllPlayers(updatedPlayers);
   } catch (err) {
@@ -70,12 +70,14 @@ const form = document.getElementById("new-player-form");
 const playerName = form.elements["name"];
 const playerBreed = form.elements["breed"];
 const playerStatus = form.elements["status"];
+const playerTeam = form.elements ["teamId"];
 const playerImageUrl = form.elements["imageUrl"];
 
 //get the element's value:
 let name = playerName.value;
 let breed = playerBreed.value;
 let status = playerStatus.value;
+let teamId = playerTeam.value;
 let imageUrl = playerImageUrl.value;
 
 //show a message with a type of the input
@@ -103,6 +105,7 @@ function hasValue(input, message) {
 
 const NAME_REQUIRED = "Enter player's name";
 const BREED_REQUIRED = "Enter puppy's breed";
+const TEAMID_REQUIRED = "Enter player's team Id";
 const STATUS_REQUIRED = "Is the player on bench or field";
 
 form.addEventListener("submit", function (event) {
@@ -113,6 +116,7 @@ form.addEventListener("submit", function (event) {
   let nameValid = hasValue(form.elements["name"], NAME_REQUIRED);
   let breedValid = hasValue(form.elements["breed"], BREED_REQUIRED);
   let statusValid = hasValue(form.elements["status"], STATUS_REQUIRED);
+  let teamIdValid = hasValue(form.elements["teamId"], TEAMID_REQUIRED);
 
 
   //if valid submit the form
