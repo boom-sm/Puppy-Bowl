@@ -39,7 +39,7 @@ const addNewPlayer = async (playerObj) => {
       body: JSON.stringify(playerObj)
     });
 
-  
+
     const result = await response.json();
     console.log(result);
 
@@ -56,12 +56,12 @@ const deleteSinglePlayerById = async (playerId) => {
     const reponse = await fetch(`${APIURL}players/${playerId}`, {
       method: "DELETE"
     });
-   const responseJson = await response.Json();
-   const player = responseJson.data.player;
-   return player;
-   } catch (error) {
-    console.error(`Whoops, trouble removing player #${playerId} from the roster!`,err);
-   }
+    const responseJson = await response.Json();
+    const player = responseJson.data.player;
+    return player;
+  } catch (error) {
+    console.error(`Whoops, trouble removing player #${playerId} from the roster!`, err);
+  }
 };
 
 //add form
@@ -69,15 +69,15 @@ const form = document.getElementById("new-player-form");
 
 const playerName = form.elements["name"];
 const playerBreed = form.elements["breed"];
-const playerStatus = form.elements["status"];
-const playerTeam = form.elements ["teamId"];
+
+
 const playerImageUrl = form.elements["imageUrl"];
 
 //get the element's value:
 let name = playerName.value;
 let breed = playerBreed.value;
-let status = playerStatus.value;
-let teamId = playerTeam.value;
+
+
 let imageUrl = playerImageUrl.value;
 
 //show a message with a type of the input
@@ -105,8 +105,6 @@ function hasValue(input, message) {
 
 const NAME_REQUIRED = "Enter player's name";
 const BREED_REQUIRED = "Enter puppy's breed";
-const TEAMID_REQUIRED = "Enter player's team Id";
-const STATUS_REQUIRED = "Is the player on bench or field";
 
 form.addEventListener("submit", function (event) {
   //stop form submission
@@ -115,17 +113,16 @@ form.addEventListener("submit", function (event) {
   //validate the form
   let nameValid = hasValue(form.elements["name"], NAME_REQUIRED);
   let breedValid = hasValue(form.elements["breed"], BREED_REQUIRED);
-  let statusValid = hasValue(form.elements["status"], STATUS_REQUIRED);
-  let teamIdValid = hasValue(form.elements["teamId"], TEAMID_REQUIRED);
+  
 
 
   //if valid submit the form
-  if (nameValid && breedValid && statusValid) {
+  if (nameValid && breedValid ) {
     alert("Player submitted");
     form.submit();
     form.submit.addEventListener("load", function () {
       document
-        .querySelector(id="imageUrl")
+        .querySelector(id = "imageUrl")
         .addEventListener("change", function () {
           if (this.files && this.files[0]) {
             let img = document.getElementById("imageUrl"); // $('img')[0]
@@ -133,7 +130,11 @@ form.addEventListener("submit", function (event) {
             img.onload = imageIsLoaded;
           }
         });
-    });
+    })
+  }
+}
+);
+
 const renderSinglePlayerById = async (playerId) => {
   try {
     const player = await fetchSinglePlayerById(playerId);
@@ -150,7 +151,7 @@ const renderSinglePlayerById = async (playerId) => {
       <img src=${player.imageUrl} alt="Player Image"> 
       <button class="close-button">Close</button>
     `;
-    
+
 
     // hide the player list container
     playerListContainer.style.display = "none";
@@ -163,7 +164,7 @@ const renderSinglePlayerById = async (playerId) => {
     closeButton.addEventListener("click", () => {
       playerContainer.appendChild(playerDetailsElement);
       window.location.href = "index.html";
-    
+
     });
   } catch (error) {
     console.error(error);
@@ -178,7 +179,7 @@ const renderAllPlayers = async (players) => {
       playerElement.innerHTML = `
                 <h2>${player.name}</h2>
                 
-                <img src="${player.imageUrl}" alt="Player Image">
+                <img src="${player.imageUrl}" alt="Player Image"/>
                 <button class="details-button" data-id="${player.id}">See Details</button>
                 <button class="delete-button" data-id="${player.id}">Delete</button>
             `;
@@ -201,8 +202,9 @@ const renderAllPlayers = async (players) => {
         await deleteSinglePlayerById(playerId);
         console.log("deleted");
         event.target.closest('div.player').remove();
+        
       });
-      
+      // location.reload();
     });
   } catch (error) {
     console.error(error);
