@@ -7,37 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- import JavaScript -->
-  <script defer src="script.js"></script>
+
+  <script defer src="index.js"></script>
 
   <!-- import CSS -->
-  <link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
   <title>PuppyBowl</title>
 </head>
 
 <body>
-  <h1 id="mainTitle">The Puppy Bowl</h1>
-  <div class="container">
-    <form action="https://fsa-puppy-bowl.herokuapp.com/api/2310-fsa-et-web-pt-sf/players" method="post"
-      id="new-player-form">
-      <h3>New Player</h3>
-      <div class="field">
-        <input type="text" id="name" name="name" placeholder="Name" required />
-        <small></small>
-      </div>
-      <div class="field">
-        <input type="text" id="breed" name="breed" placeholder="Breed" required />
-        <small></small>
-      </div>
-      <div class="field">
-        <input type='text' id="imageUrl" placeholder='imageUrl'  src="#" alt="imageUrl" height=200 width=100 />
 
-        <!-- </div> -->
-        <div class="field">
-          <button type="submit">Submit</button>
-        </div>
-    </form>
-  </div>
 
   <!-- form to add new players -->
   <div id="new-player-form"></div>
