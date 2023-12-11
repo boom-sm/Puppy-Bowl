@@ -4,15 +4,16 @@
     box-sizing: border-box;
   }
 
-
-/* styles.css */
-
 body {
   font-family: 'Arial', sans-serif;
   background-color: #b47b7b;
   margin: 0;
 }
 
+h1 {
+  padding: 0px 0px 20px;
+  color: rgb(29, 40, 40);
+}
 .container {
   max-width: 800px;
   margin: 0 auto;
