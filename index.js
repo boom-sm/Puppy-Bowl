@@ -5,8 +5,6 @@ const state = {
     players: [],
 };
 
-// Add your cohort name to the cohortName variable below, replacing the 'COHORT-NAME' placeholder
-const cohortName = '2310-fsa-et-web-pt-sf';
 // Use the APIURL variable for fetch requests
 const APIURL = 'https://fsa-puppy-bowl.herokuapp.com/api/2310-fsa-et-web-pt-sf/';
 
@@ -202,7 +200,8 @@ const renderAllPlayers = async () => {
 const renderNewPlayerForm = () => {
     const newForm = document.createElement("form");
     newForm.classList.add("form-class");
-    
+    const titles = document.createElement("h1");
+    titles.textContent = 'Puppy Bowl';
 
     const createInput = (name, label) => {
         const input = document.createElement("input");
@@ -221,7 +220,7 @@ const renderNewPlayerForm = () => {
     const submitButton = document.createElement("button");
     submitButton.textContent = "Add Player";
 
-    newForm.append(nameInput, breedInput, imgInput, submitButton);
+    newForm.append(titles, nameInput, breedInput, imgInput, submitButton);
     newPlayerFormContainer.appendChild(newForm);
 
     newForm.addEventListener("submit", async (event) => {
@@ -241,8 +240,6 @@ const renderNewPlayerForm = () => {
         }
     });
 };
-
-
 
 // Initialize the application
 const init = async () => {

@@ -4,13 +4,15 @@
     box-sizing: border-box;
   }
 
-
-/* styles.css */
-
 body {
   font-family: 'Arial', sans-serif;
   background-color: #b47b7b;
   margin: 0;
+}
+
+h1 {
+  padding: 0px 0px 20px;
+  color: rgb(46, 56, 56);
 }
 
 .container {
@@ -60,18 +62,17 @@ body {
 }
 
 .form-class button {
-  background-color: rgb(47, 131, 170);
-  color: #fff;
+  background-color: rgb(219, 78, 65);
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
 }
 
 .form-class button:hover {
-  background-color: rgb(202, 48, 48)
+  background-color: rgb(48, 139, 181)
 }
 
 .button-group {
