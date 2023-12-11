@@ -200,8 +200,9 @@ const renderAllPlayers = async () => {
 const renderNewPlayerForm = () => {
     const newForm = document.createElement("form");
     newForm.classList.add("form-class");
-    const titles = document.createElement("h1");
+    const titles = document.createElement('h1');
     titles.textContent = 'Puppy Bowl';
+    
 
     const createInput = (name, label) => {
         const input = document.createElement("input");
@@ -240,6 +241,8 @@ const renderNewPlayerForm = () => {
         }
     });
 };
+
+
 
 // Initialize the application
 const init = async () => {
